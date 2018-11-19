@@ -1,0 +1,57 @@
+// _show.scss
+#show .banner {
+  height: 50vh;
+  background-position: center;
+}
+.header-flat {
+  border: 1px solid $light-gray;
+  form {
+    margin: 20px 0;
+    margin-right: 0;
+    background: $light-gray;
+    padding: 15px;
+    border-radius: 3px;
+  }
+  p {
+    font-weight: normal;
+    font-size: 14px;
+    color: $gray;
+  }
+  h1 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+}
+.header-flat-details {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  padding-left: 0;
+}
+.header-flat-owner {
+  padding: 20px;
+}
+#flat-description {
+  background: $light-gray;
+  padding: 50px 0;
+  padding-bottom: 100px;
+  font-size: 14px;
+  color: black;
+  h2 {
+    font-size: 18px;
+    color: $gray;
+  }
+}
+#flat-data {
+  font-weight: normal;
+  font-size: 12px;
+  color: $blue;
+}
+.rating i {
+  color: $orange;
+}
+#flat-data li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}

@@ -1,11 +1,136 @@
-<!-- show.html.erb -->
 <!-- source/flats/show.html.erb -->
 
 <!-- Access data.flats with owner's name as key -->
 <% flat = data.flats[owner] %>
 
-<!-- Inject flat data in template -->
-<%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle" %>
-<p><%= flat.name %></p>
-<h1><%= flat.description %></h1>
-<p><%= flat.city_name %></p>
+<div id="show">
+  <!-- banner -->
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+  </div>
+
+  <!-- header flat block -->
+  <div class="header-flat">
+
+    <!-- header flat details and form -->
+    <div class="container">
+      <div class="row">
+
+        <!-- header flat details-->
+        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+          <div class="header-flat-details">
+            <div class="header-flat-owner text-center">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle avatar-large" %>
+              <p><%= owner.capitalize %></p>
+            </div>
+            <div class="header-flat-name">
+              <h1><%= flat.blurb %></h1>
+              <p><%= flat.city_name %></p>
+              <p class="rating">
+                <% flat.rating.times do %>
+                  <i class="fas fa-fire"></i>
+                <% end %>
+                <% (5 - flat.rating).times do %>
+                  <i class="fas fa-fire" style="color: #FAD48A;"></i>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- form -->
+        <div class="col-xs-12 col-sm-4">
+          <form action="">
+            <h4>Book this flat</h4>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6">
+                  <input type="text" class="form-control" placeholder="checkin" id="checkin">
+                </div>
+                <div class="col-xs-6">
+                  <input type="text" class="form-control" placeholder="checkout">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <select name="" id="guests" class="form-control">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+              </select>
+            </div>
+            <input type="submit" class="btn btn-danger" value="Book it" style="width: 100%">
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- flat description block -->
+  <div id="flat-description">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <h2>About this flat</h2>
+          <p><%= flat.description %></p>
+          <hr>
+          <div class="row" id="flat-data">
+            <div class="col-xs-12 col-sm-2">The Space</div>
+            <div class="col-xs-12 col-sm-4">
+              <ul class="list-unstyled">
+                <% flat.space[:col_1].each do |key, value| %>
+                  <li>
+                    <%= "#{key.capitalize.gsub('_', ' ')}:  " %>
+                    <strong><%= value %></strong>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul class="list-unstyled">
+                <% flat.space[:col_2].each do |key, value| %>
+                  <li>
+                    <%= "#{key.capitalize.gsub('_', ' ')}:  " %>
+                    <strong><%= value %></strong>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="flat-data">
+            <div class="col-xs-12 col-sm-2">Amenities</div>
+
+            <div class="col-xs-12 col-sm-4">
+              <ul class="list-unstyled">
+                <% flat.amenities[:col_1].each do |_key, value| %>
+                  <% if value[:boolean] %>
+                    <li>
+                      <i class="fas <%= value[:icon] %>"></i>
+                      <strong><%= value[:string] %></strong>
+                    </li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+              <ul class="list-unstyled">
+                <% flat.amenities[:col_2].each do |_key, value| %>
+                  <% if value[:boolean] %>
+                    <li>
+                      <i class="fas <%= value[:icon] %>"></i>
+                      <strong><%= value[:string] %></strong>
+                    </li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
