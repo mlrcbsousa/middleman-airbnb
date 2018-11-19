@@ -47,8 +47,8 @@
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px $lightgray;
-  border-color: $lightgray;
+  box-shadow: 1px 1px 4px $light-gray;
+  border-color: $light-gray;
   li > a {
     transition: color 0.3s ease;
     font-weight: lighter !important;
@@ -70,7 +70,7 @@
     top: -6px;
     background-color: white;
     transform: rotate(45deg);
-    border-left: 1px solid $lightgray;
-    border-top: 1px solid $lightgray;
+    border-left: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
   }
 }
