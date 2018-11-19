@@ -1,0 +1,7 @@
+// _rating.scss
+.rating i {
+  color: $orange;
+  &.yellow {
+    color: $yellow;
+  }
+}

@@ -25,14 +25,8 @@
             <div class="header-flat-name">
               <h1><%= flat.blurb %></h1>
               <p><%= flat.city_name %></p>
-              <p class="rating">
-                <% flat.rating.times do %>
-                  <i class="fas fa-fire"></i>
-                <% end %>
-                <% (5 - flat.rating).times do %>
-                  <i class="fas fa-fire" style="color: #FAD48A;"></i>
-                <% end %>
-              </p>
+              <%= partial "flats/rating", :locals => { :owner => owner } %>
+
             </div>
           </div>
         </div>
@@ -77,6 +71,7 @@
           <hr>
           <div class="row" id="flat-data">
             <div class="col-xs-12 col-sm-2">The Space</div>
+
             <div class="col-xs-12 col-sm-4">
               <ul class="list-unstyled">
                 <% flat.space[:col_1].each do |key, value| %>
@@ -87,6 +82,7 @@
                 <% end %>
               </ul>
             </div>
+
             <div class="col-xs-12 col-sm-4">
               <ul class="list-unstyled">
                 <% flat.space[:col_2].each do |key, value| %>

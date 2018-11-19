@@ -21,9 +21,9 @@ ssaunier:
       kitchen:
         boolean: true
         string: "Kitchen"
-        icon: "fa-cutlery"
+        icon: "fa-utensils"
       wifi:
-        boolean: false
+        boolean: true
         string: "Wifi"
         icon: "fa-wifi"
     col_2:
@@ -57,9 +57,9 @@ papillard:
       kitchen:
         boolean: true
         string: "Kitchen"
-        icon: "fa-cutlery"
+        icon: "fa-utensils"
       wifi:
-        boolean: false
+        boolean: true
         string: "Wifi"
         icon: "fa-wifi"
     col_2:
@@ -93,9 +93,9 @@ monsieurpaillard:
       kitchen:
         boolean: true
         string: "Kitchen"
-        icon: "fa-cutlery"
+        icon: "fa-utensils"
       wifi:
-        boolean: false
+        boolean: true
         string: "Wifi"
         icon: "fa-wifi"
     col_2:

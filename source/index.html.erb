@@ -36,8 +36,10 @@ title: Le Wagon - Middleman
             <div class="card-description">
               <h3><%= flat.name %></h3>
               <p><%= flat.blurb %></p>
+              <%= partial "flats/rating", :locals => { :owner => owner } %>
+
             </div>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class:"card-user img-circle" %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class:"card-user img-circle avatar" %>
             <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
           </div>
         </div>
